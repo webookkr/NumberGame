@@ -1,0 +1,42 @@
+package org.leecode.opration;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        System.out.println("숫자 추측 게임에 참가하시는 것을 환영합니다.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("당신의 이름은 무엇입니까?");
+        String name = scanner.next();
+        System.out.println("안녕하세요 " + name);
+        System.out.println("숫자 맞추기 게임을 참가 하시겠습니까?");
+        String answer1 = scanner.next();
+        if (answer1.equals("네") || answer1.equals("예")) {
+            System.out.println("계속 진행하겠습니다.");
+        } else if(answer1.equals("아니오")) {
+            System.out.println("게임을 종료합니다.");
+        } else {
+            System.out.println("다시 입력해 주십시오.");
+        }
+        Random random = new Random ();
+        int number = random.nextInt(20);
+        int i =5;
+        for (i=0; i<5; i++){
+
+        System.out.println("정답을 입력해 주세요");
+        int answer2 = scanner.nextInt();
+        System.out.println(answer2);
+        if (answer2 == number) {
+            System.out.println("축하합니다. 정답입니다.");
+            break;
+        } else if (answer2 >= number){
+            System.out.println("정답은 더 큰수입니다");
+        } else if (answer2 <= number){
+            System.out.println("정답은 더 낮은수입니다");
+        }
+        }
+        System.out.println("5번 실패하셨습니다 다음에 다시 도전하세요 감사합니다 " + name);
+
+    }
+}
